@@ -1,0 +1,133 @@
+export const skills = [
+  {
+    id: 1,
+    name: "C++",
+    icon: "FaCuttlefish",
+    level: "Advanced",
+    experience: "3 years",
+  },
+
+  {
+    id: 2,
+    name: "JavaScript",
+    icon: "SiJavascript",
+    level: "Advanced",
+    experience: "3 years",
+  },
+  {
+    id: 3,
+    name: "React",
+    icon: "FaReact",
+    level: "Advanced",
+    experience: "3 years",
+  },
+  {
+    id: 4,
+    name: "Next.js",
+    icon: "SiNextdotjs",
+    level: "Intermediate",
+    experience: "2 years",
+  },
+  {
+    id: 5,
+    name: "Node.js",
+    icon: "FaNodeJs",
+    level: "Advanced",
+    experience: "3 years",
+  },
+  {
+    id: 6,
+    name: "MongoDB",
+    icon: "SiMongodb",
+    level: "Intermediate",
+    experience: "2 years",
+  },
+  {
+    id: 7,
+    name: "MySQL",
+    icon: "GrMysql",
+    level: "Intermediate",
+    experience: "2 years",
+  },
+  {
+    id: 8,
+    name: "Firebase",
+    icon: "SiFirebase",
+    level: "Intermediate",
+    experience: "2 years",
+  },
+ 
+  {
+    id: 9,
+    name: "Flutter",
+    icon: "SiFlutter",
+    level: "Intermediate",
+    experience: "2 years",
+  },
+  {
+    id: 10,
+    name: "Git & GitHub",
+    icon: "FaGithub",
+    level: "Advanced",
+    experience: "4 years",
+  },
+  {
+    id: 11,
+    name: "NestJS",
+    icon: "SiNestjs",
+    level: "Intermediate",
+    experience: "2 years",
+  },
+  {
+    id: 12,
+    name: "React Native",
+    icon: "SiReact",
+    level: "Intermediate",
+    experience: "2 years",
+  },
+  {
+    id: 13,
+    name: "Docker",
+    icon: "FaDocker",
+    level: "Intermediate",
+    experience: "2 years",
+  },
+  {
+    id: 14,
+    name: "VSCode",
+    icon: "SiVisualstudiocode",
+    level: "Advanced",
+    experience: "4 years",
+  },
+  {
+    id: 15,
+    name: "Linux",
+    icon: "FaLinux",
+    level: "Advanced",
+    experience: "1 years",
+  },
+  {
+    id: 16,
+    name: "Figma",
+    icon: "SiFigma",
+    level: "Intermediate",
+    experience: "2 years",
+  },
+
+  {
+    id: 17,
+    name: "Python",
+    icon: "SiPyhton",
+    level: "Advanced",
+    experience: "3 years",
+  },
+
+  {
+    id: 18,
+    name: "Java",
+    icon: "SiJava",
+    level: "Advanced",
+    experience: "3 years",
+  },
+
+];
