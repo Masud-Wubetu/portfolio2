@@ -15,17 +15,17 @@ const FadeIn = ({ children, delay=0, duration=500, threshold=0.1 }) => {
         },
         {
           threshold: threshold,
-          rootMargin: '0px, 0px, -50px, 0px' // trigger slightly before element fully visible
+          rootMargin: '0px 0px -50px 0px' // trigger slightly before element fully visible
         }
       );
 
       if(elementRef.current) {
-        observer.observe(elementRef);
+        observer.observe(elementRef.current);
       }
 
       return () => {
         if(elementRef.current) {
-          observer.unobserve(elementRef);
+          observer.unobserve(elementRef.current);
         }
       };
     }, [threshold, isVisible]);
