@@ -9,7 +9,20 @@ const Navbar = () => {
   const [ isScrolled, setIsScrolled ] = useState(false);
   const activeSection = useScrollSpy(navLinks.map(link => link.id));
 
-  useEffect
+  useEffect(() => {
+    const handleScroll = () => {
+       setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () =>  window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const handleNavClick = (sectionId) => {
+    scrollToSection(sectionId);
+    setIsMenuopen(false);
+  }
+
 
 
   return (
