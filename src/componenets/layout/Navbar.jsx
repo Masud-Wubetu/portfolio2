@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react'
 import { Code, Menu, X } from 'lucide-react'
 import { navLinks, personalInfo } from '../../utils/constants'
-import useScrollSpy from '../../hooks/useScrollSpy'
+import {useScrollSpy, scrollToSection} from '../../hooks/useScrollSpy'
 import { useState } from 'react'
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuopen] = useState(false);
   const [ isScrolled, setIsScrolled ] = useState(false);
-  const activeSection = useScrollSpy(navLinks.map(link => link.id));
+  const activeSection = useScrollSpy(navLinks.map(link => link.href));
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,10 +31,83 @@ const Navbar = () => {
             : 'bg-transparent'
             }`}
          style={{ transfrom: 'translate3d(0, 0, 0)'}}>
-          <div className=''>
-            <div className=''>
+          <div className='max-w-[1320px] mx-auto px-5'>
+            <div className='flex items-center justify-between'>
+              {/* logo */}
+              <div className='flex item-center gap-4'>
+                <Code className='w-6 h-6 text-primary'/>
 
+                <button onClick={() => window.scrollTo({ top: 0, behaviour: 'smooth' })}
+                        className='text-2xl font-bold bg-linear-to-r from-primary via-primary/50 to-primary/30 bg-clip-text text-transparent hover:opacity-80 transition-opacity'
+                        aria-label='Home'>
+                          {personalInfo.name.split(' ')[0]}
+                        </button>
+              </div>
+
+              {/* desktop navigation */}
+              <nav className='hidden md:flex items-center gap-7'>
+                {navLinks.map((link) => (
+                  <button 
+                      key={link.href}
+                      onClick={() => handleNavClick(link.href)}
+                      className={`text-base font-medium transition-all duration-300 ${activeSection === link.href
+                          ? 'text-white'
+                          : 'text-white/70 hover:text-white'
+                          }`}
+                  >
+                       {link.name}
+                  </button>
+                ))}
+              </nav>
+
+              {/* CTA button */}
+              <div className='hidden md:flex items-center gap-2'>
+                <button
+                  onClick={() => handleNavClick('contact')}
+                  className='px-7 py-3.5 bg-white text-[#212121] font-medium text-base rounded-[17px] border border-white hover:bg-white/90 transition-all duration-300 '
+                >
+                  Hire me
+                </button>
+              </div>
+
+              {/* mobile menu button */}
+              <button
+                  onClick={() => setIsMenuopen(!isMenuOpen)}
+                  className='md:hidden p-4 text-white hover:text-white/80 transition-colors'
+                  arial-label='menu'
+                  aria-expanded={isMenuOpen}
+              >
+                  {isMenuOpen ? <X className='w-6 h-6'/> : <Menu className='w-6 h-6'/>}
+              </button>
             </div>
+          </div>
+
+          {/* mobile menu */}
+          <div
+              className={`md:hidden transition-all duration-300 overflow-hidden ${isMenuOpen ? 'max-h-96 opacity-100': 'max-h-0 opacity-0'
+                  }`}
+          >
+              <div className='bg-balck/95 backdrop-blur-lg brder-t border-white/10 px-5 py-6 space-y-3'>
+                 {navLinks.map((link) => (
+                  <button 
+                      key={link.href}
+                      onClick={() => handleNavClick(link.href)}
+                      className={`block w-full text-left px-4 py-3 rounded-lg font-medium transition-all duration-300 ${activeSection === link.href
+                          ? 'text-white bg-white/10'
+                          : 'text-white/70 hover:text-white hover:bg-white/5'
+                          }`}
+                  >
+                       {link.name}
+                  </button>
+                 ))}
+                 <button
+                      onClick={() => handleNavClick('contact')}
+                      className='w-full px-7 py-3.5 bg-white text-[#212121] font-medium text-base rounded-[17px] border border-white hover:bg-white/90 transition-all duration-300 mt-2'
+                >
+                      Hire me
+                </button>
+              </div>
+
           </div>
 
     </nav>
