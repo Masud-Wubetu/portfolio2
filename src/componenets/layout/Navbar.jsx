@@ -50,7 +50,7 @@ const Navbar = () => {
                   <button 
                       key={link.href}
                       onClick={() => handleNavClick(link.href)}
-                      className={`text-base font-medium transition-all duration-300 ${activeSection === link.href
+                      className={`text-xl font-medium transition-all duration-300 ${activeSection === link.href
                           ? 'text-white'
                           : 'text-white/70 hover:text-white'
                           }`}
@@ -87,13 +87,13 @@ const Navbar = () => {
               className={`md:hidden transition-all duration-300 overflow-hidden ${isMenuOpen ? 'max-h-96 opacity-100': 'max-h-0 opacity-0'
                   }`}
           >
-              <div className='bg-balck/95 backdrop-blur-lg brder-t border-white/10 px-5 py-6 space-y-3'>
+              <div className='bg-black/95 backdrop-blur-lg border-t border-white/10 px-5 py-6 space-y-3'>
                  {navLinks.map((link) => (
                   <button 
                       key={link.href}
                       onClick={() => handleNavClick(link.href)}
                       className={`block w-full text-left px-4 py-3 rounded-lg font-medium transition-all duration-300 ${activeSection === link.href
-                          ? 'text-white bg-white/10'
+                          ? 'text-white bg-white/0'
                           : 'text-white/70 hover:text-white hover:bg-white/5'
                           }`}
                   >
