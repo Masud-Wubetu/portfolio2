@@ -1,6 +1,7 @@
 import React from 'react'
 import Navbar from './componenets/layout/Navbar'
 import Hero from './componenets/sections/Hero'
+import About from './componenets/sections/About'
 
 const App = () => {
   return (
@@ -9,6 +10,7 @@ const App = () => {
 
       <main>
         <Hero/>
+        <About/>
       </main>
     </div>
   )

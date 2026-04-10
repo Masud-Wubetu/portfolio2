@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import { ChevronDown, Star } from 'lucide-react';
-import { SiReact,SiNextdotjs, SiTailwindcss,
+import { SiReact,SiNextdotjs, SiTypescript, SiTailwindcss,
          SiNodedotjs, SiMongodb, SiPostgresql, 
          SiGithub, SiExpress, SiHtml5, SiCss, 
          SiJavascript, SiPython, SiCplusplus,} from 'react-icons/si';
@@ -15,7 +15,7 @@ import RadialGradientBackground from '../backgrounds/RadialGradientBackground'
 const Hero = () => {
   return (
     <section className='relative min-h-screen flex items-center overflow-hidden bg-black'>
-      {/* <RadialGradientBackground variant="hero"/> */}
+      <RadialGradientBackground variant="hero"/>
 
       {/* content container */}
       <div className=' relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full'>
@@ -109,6 +109,10 @@ const Hero = () => {
 
                       <div className='w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300'>
                         <SiTailwindcss className='w-full h-full text-primary'/>
+                      </div>
+
+                      <div className='w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300'>
+                        <SiTypescript className='w-full h-full text-primary'/>
                       </div>
 
                       <div className='w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300'>
