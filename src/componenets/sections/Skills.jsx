@@ -80,7 +80,7 @@ const Skills = () => {
                 <div className="absolute bottom-1/4 right -0 w-96 h-96 bg-primary/10 rounded-full blur-3xl opacity-50" />
             </div>
 
-            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
+            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <FadeIn delay={100}>
                     <div className="text-center mb-16">
                         <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/30 rounded-full mb-6">
