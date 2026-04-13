@@ -5,6 +5,7 @@ import About from './componenets/sections/About'
 import Skills from './componenets/sections/Skills'
 import Projects from './componenets/sections/Projects'
 import Services from './componenets/sections/Services'
+import Testimonials from './componenets/sections/Testimonials'
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
         <Skills/>
         <Projects/>
         <Services/>
+        <Testimonials/>
       </main>
     </div>
   )

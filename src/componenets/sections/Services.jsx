@@ -32,7 +32,7 @@ const Services = () => {
                             <Wrench className="w-4 h-4 text-primary" />
                             <span className="text-sm text-primary font-medium tracking-wider uppercase">What I Offer</span>
                         </div>
-                        <h2 className="ext-4xl lg:text-5xl font-normal text-white mb-4 max-w-2xl mx-auto ">
+                        <h2 className="text-4xl lg:text-5xl font-normal text-white mb-4 max-w-2xl mx-auto ">
                             Built for innovation. Designed for results.
                         </h2>
                         <p className="text-lg text-white/60 max-w-xl mx-auto">

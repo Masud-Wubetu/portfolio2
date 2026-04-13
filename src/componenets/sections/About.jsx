@@ -82,7 +82,7 @@ const About = () => {
                 <FadeIn delay={200}>
                     <div className='grid grid-cols-2 gap-4 mb-4'>
                         <div className='col-span-2 relative group'>
-                            <div className='absolute inset-0 bg-linea-relative bg-white/5 border border-white/10 rounded-2xl blur-xl p-6 hover:border-primary/30 transition-all duration-300'></div>
+                            <div className='absolute inset-0 bg-linear-relative bg-white/5 border border-white/10 rounded-2xl blur-xl p-6 hover:border-primary/30 transition-all duration-300'></div>
                             <div className='relative bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-primary/30 transition-all duration-300'>
                                 <div className='flex items-start gap-4'>
                                     <div className='p-3 bg-primary/10 rounded-xl'>
