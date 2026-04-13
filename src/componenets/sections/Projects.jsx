@@ -154,7 +154,7 @@ const Projects = () => {
                             </button>
                         </>
                     )}
-
+ 
                     {/* Navigation Dots */}
                     {filteredProjects.length > 3 && (
                         <div className="flex items-center justify-center gap-2 mt-8">

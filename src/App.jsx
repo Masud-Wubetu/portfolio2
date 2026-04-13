@@ -4,6 +4,7 @@ import Hero from './componenets/sections/Hero'
 import About from './componenets/sections/About'
 import Skills from './componenets/sections/Skills'
 import Projects from './componenets/sections/Projects'
+import Services from './componenets/sections/Services'
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
         <About/>
         <Skills/>
         <Projects/>
+        <Services/>
       </main>
     </div>
   )
