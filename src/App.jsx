@@ -6,6 +6,7 @@ import Skills from './componenets/sections/Skills'
 import Projects from './componenets/sections/Projects'
 import Services from './componenets/sections/Services'
 import Testimonials from './componenets/sections/Testimonials'
+import Contact from './componenets/sections/Contact'
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
         <Projects/>
         <Services/>
         <Testimonials/>
+        <Contact/>
       </main>
     </div>
   )

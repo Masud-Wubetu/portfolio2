@@ -161,7 +161,7 @@ const Testimonials = () => {
 
                         <button
                             onClick={nextTestimonial}
-                            className="flex absolute top-1/2 right -0 -translate-x-1/2 -translate-y-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2 items-center justify-center w-10 h-10 lg:w-12 lg:h-12 bg-white/10 backdrop-blur-sm border-white/20 hover:bg-white/20 rounded-full transition-all duration-300 z-10"
+                            className="flex absolute top-1/2 right-0 -translate-x-1/2 -translate-y-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2 items-center justify-center w-10 h-10 lg:w-12 lg:h-12 bg-white/10 backdrop-blur-sm border-white/20 hover:bg-white/20 rounded-full transition-all duration-300 z-10"
                             aria-label="Next testimonial"
                         >
                             <ChevronRight className="w-6 h-6 text-white" />
