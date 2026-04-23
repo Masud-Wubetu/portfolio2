@@ -7,20 +7,22 @@ import Projects from './componenets/sections/Projects'
 import Services from './componenets/sections/Services'
 import Testimonials from './componenets/sections/Testimonials'
 import Contact from './componenets/sections/Contact'
+import Footer from './componenets/layout/Footer'
 
 const App = () => {
   return (
     <div className='min-h-screen bg-black pb-[100vh]'>
-      <Navbar/>
+      <Navbar />
 
       <main>
-        <Hero/>                  
-        <About/>
-        <Skills/>
-        <Projects/>
-        <Services/>
-        <Testimonials/>
-        <Contact/>
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <Services />
+        <Testimonials />
+        <Contact />
+        <Footer />
       </main>
     </div>
   )
