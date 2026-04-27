@@ -8,10 +8,12 @@ import Testimonials from './componenets/sections/Testimonials'
 import Contact from './componenets/sections/Contact'
 import Footer from './componenets/layout/Footer'
 import ParticleBackground from './componenets/backgrounds/ParticleBackground'
+import CustomCursor from './componenets/ui/CustomCursor'
 
 const App = () => {
   return (
     <div className='min-h-screen relative'>
+      <CustomCursor />
       {/* Background Layers */}
       <div className="fixed inset-0 z-0 pointer-events-none">
         <ParticleBackground />
