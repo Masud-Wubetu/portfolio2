@@ -79,31 +79,21 @@ const Hero = () => {
           <div className='lg:col-span-5 flex justify-center lg:justify-end'>
             <FadeIn delay={300}>
               <motion.div
-                animate={{
-                  y: [0, -15, 5, -10, 0],
-                  x: [0, 5, -5, 3, 0],
-                  rotate: [0, 1.5, -1.5, 1, 0]
-                }}
-                transition={{
-                  duration: 8,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
                 className='relative group'
               >
                 {/* Floating clean image */}
-                <div className='relative overflow-hidden rounded-2xl w-[320px] h-[400px] md:w-[400px] md:h-[500px] shadow-[0_0_40px_rgba(122,19,255,0.15)] border border-primary/20 transition-transform duration-700 hover:scale-[1.02] bg-[#0f1524] flex items-center justify-center'>
+                <div className='relative overflow-hidden rounded-2xl w-[320px] h-[400px] md:w-[400px] md:h-[500px] shadow-[0_0_40px_rgba(122,19,255,0.15)] border border-primary/20 group-hover:border-primary bg-[#0f1524] flex items-center justify-center'>
                   <div className='absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent opacity-50' />
                   <img
                     src={profilePicture}
                     alt='Masud Wubetu'
-                    className='w-full h-full object-cover transition-all duration-700'
+                    className='w-full h-full object-cover'
                   />
                 </div>
 
                 {/* Decorative neon dots */}
-                <div className="absolute -top-6 -right-6 w-12 h-12 border-t-2 border-r-2 border-primary/50 rounded-tr-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100"></div>
-                <div className="absolute -bottom-6 -left-6 w-12 h-12 border-b-2 border-l-2 border-primary/50 rounded-bl-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100"></div>
+                <div className="absolute -top-6 -right-6 w-12 h-12 border-t-2 border-r-2 border-primary/50 rounded-tr-xl opacity-0 group-hover:opacity-100"></div>
+                <div className="absolute -bottom-6 -left-6 w-12 h-12 border-b-2 border-l-2 border-primary/50 rounded-bl-xl opacity-0 group-hover:opacity-100"></div>
               </motion.div>
             </FadeIn>
           </div>

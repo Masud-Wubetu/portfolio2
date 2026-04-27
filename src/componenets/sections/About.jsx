@@ -38,15 +38,15 @@ const About = () => {
                     <div className='lg:col-span-5 relative group'>
                         <FadeIn delay={200}>
                             <div className="relative">
-                                {/* Decorative Frames */}
-                                <div className="absolute -inset-4 border border-white/5 rounded-[3rem] -rotate-3 transition-transform group-hover:rotate-0 duration-700" />
-                                <div className="absolute -inset-4 border border-primary/20 rounded-[3rem] rotate-3 transition-transform group-hover:rotate-0 duration-700" />
+                                {/* Decorative Frames (Now Static) */}
+                                <div className="absolute -inset-4 border border-white/5 rounded-[3rem] -rotate-3" />
+                                <div className="absolute -inset-4 border border-primary/20 rounded-[3rem] rotate-3 group-hover:border-primary" />
 
-                                <div className="relative rounded-[2.5rem] overflow-hidden bg-[#0D0D0D] border border-white/10 shadow-2xl">
+                                <div className="relative rounded-[2.5rem] overflow-hidden bg-[#0D0D0D] border border-white/10 group-hover:border-primary shadow-2xl">
                                     <img
                                         src={profilePicture}
                                         alt={personalInfo.name}
-                                        className="w-full h-full object-cover grayscale group-hover:grayscale-0 duration-250 scale-110 group-hover:scale-101"
+                                        className="w-full h-full object-cover"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
 
@@ -66,8 +66,7 @@ const About = () => {
                         {/* Bio Section */}
                         <FadeIn delay={300}>
                             <div className='space-y-8'>
-                                <h3 className="text-3xl font-medium tracking-tighter text-white tracking-tight flex items-center gap-4">
-                                    <div className="w-16 h-[4px] bg-primary rounded-full shadow-[0_0_10px_rgba(122,19,255,0.4)]" />
+                                <h3 className="text-3xl font-medium tracking-tighter text-primary tracking-tight flex items-center gap-4">
                                     The Journey
                                 </h3>
                                 <div className='space-y-6'>
