@@ -1,158 +1,170 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { skills } from '../../data/skills'
-import * as Icons from 'lucide-react'
+import { motion, AnimatePresence } from 'framer-motion'
 import FadeIn from '../animations/FadeIn'
-const Skills = () => {
+import {
+    SiReact, SiNextdotjs, SiTypescript, SiTailwindcss,
+    SiNodedotjs, SiMongodb, SiPostgresql, SiJavascript,
+    SiPython, SiExpress, SiHtml5, SiCss, SiFirebase,
+    SiDjango, SiPrisma, SiMysql, SiStripe, SiGithub,
+    SiDocker, SiLinux, SiNestjs, SiVite, SiBootstrap,
+    SiPostman, SiJest, SiFigma, SiFlutter
+} from 'react-icons/si'
 
-    const skillCategories = {
-        'Frontend Development': [
-            skills.find(s => s.name === 'React'),
-            skills.find(s => s.name === 'Next.js'),
-            skills.find(s => s.name === 'JavaScript'),
-            skills.find(s => s.name === 'TypeScript'),
-            skills.find(s => s.name === 'TailwindCss'),
-            skills.find(s => s.name === 'Bootstrap'),
-        ].filter(Boolean),
+const getTechInfo = (techName) => {
+    const name = techName.toLowerCase();
+    if (name.includes('react')) return { color: '#61DAFB' };
+    if (name.includes('next')) return { color: '#ffffff' };
+    if (name.includes('type')) return { color: '#3178C6' };
+    if (name.includes('tailwind')) return { color: '#06B6D4' };
+    if (name.includes('node')) return { color: '#339933' };
+    if (name.includes('mongo')) return { color: '#47A248' };
+    if (name.includes('postgre')) return { color: '#4169E1' };
+    if (name.includes('python')) return { color: '#3776AB' };
+    if (name.includes('express')) return { color: '#ffffff' };
+    if (name.includes('html')) return { color: '#E34F26' };
+    if (name.includes('css')) return { color: '#1572B6' };
+    if (name.includes('firebase')) return { color: '#FFCA28' };
+    if (name.includes('django')) return { color: '#092E20' };
+    if (name.includes('prisma')) return { color: '#2D3748' };
+    if (name.includes('mysql')) return { color: '#4479A1' };
+    if (name.includes('stripe')) return { color: '#635BFF' };
+    if (name.includes('javascript')) return { color: '#F7DF1E' };
+    if (name.includes('github')) return { color: '#ffffff' };
+    if (name.includes('docker')) return { color: '#2496ED' };
+    if (name.includes('linux')) return { color: '#FCC624' };
+    if (name.includes('nestjs')) return { color: '#E0234E' };
+    if (name.includes('vite')) return { color: '#646CFF' };
+    if (name.includes('bootstrap')) return { color: '#7952B3' };
+    if (name.includes('postman')) return { color: '#FF6C37' };
+    if (name.includes('jest')) return { color: '#C21325' };
+    if (name.includes('figma')) return { color: '#F24E1E' };
+    if (name.includes('flutter')) return { color: '#02569B' };
+    return { color: '#888888' };
+};
 
-        'Backend & Databases': [
-            skills.find(s => s.name === 'Node.js'),
-            skills.find(s => s.name === 'NestJS'),
-            skills.find(s => s.name === 'MongoDB'),
-            skills.find(s => s.name === 'MySQL'),
-            skills.find(s => s.name === 'PostgreSQL'),
-            skills.find(s => s.name === 'REST APIs'),
-        ].filter(Boolean),
-
-        'Tools & DevOps': [
-            skills.find(s => s.name === 'Git & GitHub'),
-            skills.find(s => s.name === 'Docker'),
-            skills.find(s => s.name === 'VSCode'),
-            skills.find(s => s.name === 'Linux'),
-            skills.find(s => s.name === 'Figma'),
-            skills.find(s => s.name === 'Vite'),
-            skills.find(s => s.name === 'Responsive Design'),
-            
-        ].filter(Boolean),
-
-        'Mobile Development': [
-            skills.find(s => s.name === 'Flutter'),
-            skills.find(s => s.name === 'React Native'),
-        ].filter(Boolean),
-
-        'Programming Languages': [
-            skills.find(s => s.name === 'C++'),
-            skills.find(s => s.name === 'Python'),
-            skills.find(s => s.name === 'Java'),
-        ].filter(Boolean),
-
-        'Testing & Debugging': [
-            skills.find(s => s.name === 'Jest'),
-            skills.find(s => s.name === 'Postman'),
-        ].filter(Boolean),
-
-    };
-
-    // get proficiency level
-    const getProficiencyLevel = (level) => {
-        const levels = {
-            'Expert': 95,
-            'Advanced': 80,
-            'Intermediate': 65,
-        };
-        return levels[level] || 50;
-    };
-
-        // Get level color
-    const getLevelColor = (level) => {
-        const colors = {
-            'Expert': 'text-[#8DFF69] bg-[#8DFF69]/20 border-[#8DFF69]/30',
-            'Advanced': 'text-cyan-400 bg-cyan-500/20 border-cyan-500/30',
-            'Intermediate': 'text-emerald-400 bg-emerald-500/20 border-emerald-500/30',
-        };
-        return colors[level] || 'text-gray-400 bg-gray-500/20 border-gray-500/30';
-    };
+const SkillIcon = ({ skill }) => {
+    const [isHovered, setIsHovered] = useState(false);
+    const Icon = skill.icon;
+    const { color } = getTechInfo(skill.name);
 
     return (
-        <section id="skills" className="relative py-20 bg-balck overflow-hidden ml-6 mr-6">
-            {/* Animated Background Gradients */}
-            <div className="absolute inset-0 overflow-hidden ">
-                <div className="absolute top-1/4 left-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl opacity-50" />
-                <div className="absolute bottom-1/4 right -0 w-96 h-96 bg-primary/10 rounded-full blur-3xl opacity-50" />
+        <div
+            className="relative flex flex-col items-center"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+        >
+            <motion.div
+                whileHover={{
+                    scale: 2.3,
+                    zIndex: 50,
+                    transition: { type: "spring", stiffness: 1300, damping: 16, mass: 0.9 }
+                }}
+                className="w-12 h-12 md:w-13 md:h-13 rounded-xl flex items-center justify-center cursor-pointer relative overflow-visible border border-white/10"
+                style={{ backgroundColor: color }}
+            >
+                <Icon
+                    className="w-6 h-6 md:w-7 md:h-7"
+                    style={{ color: '#000000' }}
+                />
+            </motion.div>
+
+            {/* Tooltip / Name */}
+            <AnimatePresence>
+                {isHovered && (
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.5 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.5 }}
+                        className="absolute -bottom-8 z-50 whitespace-nowrap pointer-events-none"
+                    >
+                        <div
+                            className="text-black text-[9px] font-black uppercase tracking-[0.2em] px-3 py-1 rounded-full shadow-2xl"
+                            style={{ backgroundColor: color === '#ffffff' ? '#ffffff' : color }}
+                        >
+                            {skill.name}
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </div>
+    )
+}
+
+const Skills = () => {
+    const categories = [
+        {
+            title: "LIBRARIES AND FRAMEWORKS",
+            items: ["React", "Next.js", "NestJS", "ExpressJs", "TailwindCss", "Bootstrap", "Flutter"]
+        },
+        {
+            title: "LANGUAGES AND TOOLS",
+            items: ["JavaScript", "TypeScript", "Python", "C++", "Html5", "Css", "Figma", "Postman", "Jest"]
+        },
+        {
+            title: "DEVOPS",
+            items: ["Git & GitHub", "Docker", "Linux", "Firebase", "Vite"]
+        },
+        {
+            title: "DATA ANALYSIS",
+            items: ["Python", "MySQL", "PostgreSQL", "MongoDB"]
+        }
+    ];
+
+    return (
+        <section id="skills" className="relative py-48 bg-transparent overflow-hidden">
+
+            {/* Background Wavy Lines */}
+            <div className="absolute right-0 top-0 bottom-0 w-1/3 opacity-20 pointer-events-none overflow-hidden">
+                <svg viewBox="0 0 400 800" className="h-full w-full stroke-primary/30 fill-none">
+                    <path d="M400,0 Q300,100 350,200 T400,400 T300,600 T400,800" strokeWidth="2" />
+                    <path d="M400,50 Q320,150 370,250 T380,450 T320,650 T400,850" strokeWidth="1" />
+                    <path d="M400,100 Q340,200 390,300 T360,500 T340,700 T400,900" strokeWidth="0.5" />
+                </svg>
             </div>
 
-            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <FadeIn delay={100}>
-                    <div className="text-center mb-16">
-                        <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/30 rounded-full mb-6">
-                            <Icons.Sparkles className="w-4 h-4 text-primary" />
-                            <span className="text-sm text-primary font-medium">My Expertise</span>
-                        </div>
-                        <h2 className="text-4xl lg:text-5xl font-normal text-white mb-4">
-                            Skills & Technologies
+            <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+
+                {/* Header: Full Width */}
+                <div className="mb-32 text-left">
+                    <FadeIn delay={0}>
+                        <h2 className="text-7xl md:text-9xl font-black text-white tracking-tighter leading-none mb-10">
+                            <span className="text-primary">My Skills.</span>
                         </h2>
-                        <p className="text-lg text-white/60 max-w-2xl mx-auto">
-                            A comprehensive overview of my technical skills and proficiency levels
-                        </p>
-                    </div>
-                </FadeIn>
-           
-                {/* Skills Categories */}
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                    {Object.entries(skillCategories).map(([category, categorySkills], categoryIndex) => (
-                        <FadeIn key={category} delay={categoryIndex * 100}>
-                            <div className="relative bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-primary/30 transition-all duration-300 group">
-                                <div className="flex items-center gp-3 mb-6 pb-4 border-b border-white/10">
-                                    <div className="w-1 h-8 bg-linear-to-b from-primary/30 to-primary/10 rounded-full "></div>
-                                    <h3 className="text-xl font-medium text-white ">{category}</h3>
+                        <div className="flex items-start">
+                            <p className="text-2xl md:text-4xl text-white/90 font-medium leading-[1.1] max-w-5xl">
+                                I have production-level experience in crafting aesthetic user experiences with modern frontend architecture, knowing when to use the right tools.
+                            </p>
+                        </div>
+                    </FadeIn>
+                </div>
+
+                {/* Categories: Full Width Stacks */}
+                <div className="space-y-12">
+                    {categories.map((cat, idx) => (
+                        <FadeIn key={cat.title} delay={idx * 150}>
+                            <div className="space-y-4">
+                                <div className="flex items-center">
+                                    <h4 className="text-2xl font-black text-white uppercase">
+                                        {cat.title}
+                                    </h4>
                                 </div>
-
-                                {/* Skills List */}
-                                <div className="space-y-5">
-                                    {categorySkills.map((skill, skillIndex) => {
-                                        const IconComponent = Icons[skill.icon] || Icons.Code;
-                                        const proficiency = getProficiencyLevel(skill.level);
-
-                                        return (
-                                            <div key={skill.id} className="space-y-2">
-                                                <div className="flex items-center justify-between">
-                                                    <div className="flex items-center gap-3">
-                                                        <div className="p-2 bg-white/5 rounded-lg">
-                                                            <IconComponent className="w-4 h-4 text-primary" />
-                                                        </div> 
-                                                        <div>
-                                                            <div className='text-sm font-medium text-white'>
-                                                                {skill.name}
-                                                            </div>
-                                                            <div className='text-xs text-white/50'>
-                                                                {skill.experience}
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <span className={`text-xs px-2 py-1 rounded-full border ${getLevelColor(skill.level)}`}>
-                                                        {skill.level}
-                                                    </span>
-                                                </div>
-
-                                                <div className='relative h-1.5 bg-white/5 rounded-full overflow-hidden'>
-                                                    <div 
-                                                        className='absolute top-0 left-0 h-full bg-linear-to-r from-primary/10 to-primary/80 transition-all duration-1000 ease-out'
-                                                        style={{ width: `${proficiency}%` }}
-                                                    ></div>
-                                                </div>
-                                            </div>
-                                        );
+                                <div className="flex flex-wrap gap-6 md:gap-7 pl-2">
+                                    {cat.items.map(skillName => {
+                                        const skill = skills.find(s => s.name === skillName);
+                                        return skill ? <SkillIcon key={skill.id} skill={skill} /> : null;
                                     })}
                                 </div>
-                                
-                                {/* Hover Glow Effect */}
-                                <div className='absolute inset-0 bg-linear-to-br from-primary/10 to-primary/5 group-hover:from-primary/5 group-hover:to-primary/5 rounded-2xl trsnsition-all duration-300 pointer-events-none'></div>
                             </div>
                         </FadeIn>
                     ))}
                 </div>
             </div>
+
+            {/* Subtle glow orb */}
+            <div className="absolute top-1/2 left-0 -translate-y-1/2 w-96 h-96 bg-primary/5 rounded-full blur-[120px] -z-10" />
         </section>
-    );
+    )
 }
 
-export default Skills;
+export default Skills

@@ -1,169 +1,115 @@
 import React from 'react'
-import { useState } from 'react'
-import { ChevronDown, Star } from 'lucide-react';
-import { SiReact,SiNextdotjs, SiTypescript, SiTailwindcss,
-         SiNodedotjs, SiMongodb, SiPostgresql, 
-         SiGithub, SiExpress, SiHtml5, SiCss, 
-         SiJavascript, SiPython, SiCplusplus,} from 'react-icons/si';
-import { personalInfo, stats } from '../../utils/constants';
+import { FiMail, FiLinkedin, FiGithub } from 'react-icons/fi';
+import { personalInfo } from '../../utils/constants';
 import { scrollToSection } from '../../hooks/useScrollSpy';
 import FadeIn from '../animations/FadeIn';
+import { motion } from 'framer-motion';
+import TypewriterText from '../animations/TypewriterText';
 import profilePicture from '../../assets/image.png'
-import RadialGradientBackground from '../backgrounds/RadialGradientBackground'
-
 
 const Hero = () => {
   return (
-    <section className='relative min-h-screen flex items-center overflow-hidden bg-black'>
-      <RadialGradientBackground variant="hero"/>
+    <section id="home" className='relative min-h-screen flex items-center overflow-hidden bg-transparent pt-20'>
+      {/* Background elements */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
 
       {/* content container */}
-      <div className=' relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full'>
-        <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-center'>
+      <div className='relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-20 w-full'>
+        <div className='grid grid-cols-1 lg:grid-cols-12 gap-16 items-center'>
 
           {/*Left column - content */}
-          <div className='text-left'>
+          <div className='text-left lg:col-span-7'>
             <FadeIn delay={0}>
-              <div className='inline-flex items-center gap-1.5 px-[18px] py-[11px] mb-8 bg-linear-to-r from-primary/10 via-primary/15 to-primary/20 border border-primary/20 rounded-full'>
-                <Star className='w-4 h-4 text-white fill-white'/>
-                <span className='text-sm md:text-base lg:text-lg text-white tracking-wide font-medium'>
-                  {personalInfo.title} | Based in {personalInfo.location}
+              <div className="mb-6 flex items-center">
+                <span className="text-3xl md:text-4xl font-medium tracking-wide text-primary drop-shadow-[0_0_15px_rgba(168,85,247,0.4)]">
+                  Hello
                 </span>
+                <span className="text-3xl md:text-4xl ml-3 animate-pulse inline-block origin-[70%_70%]">👋</span>
               </div>
             </FadeIn>
 
             <FadeIn delay={100}>
-              <h1 className='text-4xl md:text-5xl lg:text-6xl font-normal text-white mb-6 leading-tight'>
-                React.js | Next.js Developer Portfolio
+              <h1 className='text-5xl md:text-7xl font-bold text-white mb-8 tracking-tight'>
+                I am <span className="relative inline-block">
+                  Masud
+                  <span className="absolute -bottom-2 left-0 w-full h-1.5 bg-primary/80 rounded-full shadow-[0_0_15px_rgba(168,85,247,0.6)]"></span>
+                </span> Wubetu
               </h1>
             </FadeIn>
 
             <FadeIn delay={200}>
-              <p className='text-lg text-white/70 max-w-[550px] mb-8'>
-                Building modern, scalable web applications with React, NextJs, Javascript and cutting-edge technologies. Transforming ideas into exceptional degital experiences.
-              </p>
+              <div className="mb-12 h-10">
+                <TypewriterText text="I build systems that don't break at scale." delay={70} />
+              </div>
             </FadeIn>
 
             <FadeIn delay={300}>
-              <button
-                  onClick={() => scrollToSection('contact')}
-                  className='inline-flex items-center gap-0 mb-12 group'
-              >
-                  <div className='relative z-10 bg-white text-[#212121] rounded-[17px] px-[26px] py-[13px] text-base font-medium border border-white'>
-                    Get in Touch
-                  </div>
-              </button> 
+              <div className="flex items-center gap-6 mb-12">
+                <a href={`mailto:${personalInfo.email}`} className="text-gray-400 hover:text-primary transition-colors hover:scale-110 duration-300">
+                  <FiMail className="w-6 h-6" />
+                </a>
+                <a href="https://www.linkedin.com/in/masud-wubetu-15ab93363/" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-primary transition-colors hover:scale-110 duration-300">
+                  <FiLinkedin className="w-6 h-6" />
+                </a>
+                <a href="https://github.com/Masud-Wubetu" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-primary transition-colors hover:scale-110 duration-300">
+                  <FiGithub className="w-6 h-6" />
+                </a>
+              </div>
             </FadeIn>
 
             <FadeIn delay={400}>
-              <div className='grid grid-cols-2 md:grid-cols-4 gap-10 max-w-full'>
-                {stats.map(( stat, index ) => (
-                  <div key={index} className='text-left border-r border-white/50 pr-10 last:border-r-0'>
-                    <div className='text-2xl font-normal text-primary mb-[8px] font-mono'>
-                      {stat.value}
-                    </div>
-                    <p className='text-sm text-white leading-snug'>
-                      {stat.label}
-                    </p>
-                  </div>
-                ))}
+              <div className='flex flex-wrap items-center gap-6'>
+                <button
+                  onClick={() => scrollToSection('contact')}
+                  className='px-8 py-3 rounded-lg border border-primary text-white bg-primary/10 hover:bg-primary/20 hover:shadow-[0_0_20px_rgba(168,85,247,0.3)] transition-all duration-300 font-mono text-sm tracking-wide uppercase'
+                >
+                  Let's Talk
+                </button>
+                <a
+                  href="/Resume.pdf"
+                  target="_blank"
+                  className='px-8 py-3 rounded-lg border border-gray-600 text-gray-300 hover:text-white hover:border-gray-400 hover:bg-transparent transition-all duration-300 font-mono text-sm tracking-wide uppercase'
+                >
+                  Download CV
+                </a>
               </div>
             </FadeIn>
           </div>
 
-
-          {/* right Column - Developer Image */}
-          <FadeIn delay={200}>
-            <div className='relative'>
-              <div className='relative overflow-hidden rounded-2xl aspect-[4/5] max-w-[500px] ml-auto group'>
-                <div className='absolute inset-0 rounded-2xl overflow-hidden'>
-                  <div className='absolute inset-[-2px] bg-linear-to-r from-primary/20 via-primary/10 to-primary animate-spin-slow rounded-2xl'></div>
-                </div>
-                {/* Image container */}
-                <div className='relative rounded-2xl h-full  overflow-hidden m-[1px]'>
+          <div className='lg:col-span-5 flex justify-center lg:justify-end'>
+            <FadeIn delay={300}>
+              <motion.div
+                animate={{
+                  y: [0, -15, 5, -10, 0],
+                  x: [0, 5, -5, 3, 0],
+                  rotate: [0, 1.5, -1.5, 1, 0]
+                }}
+                transition={{
+                  duration: 8,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+                className='relative group'
+              >
+                {/* Floating clean image */}
+                <div className='relative overflow-hidden rounded-2xl w-[320px] h-[400px] md:w-[400px] md:h-[500px] shadow-[0_0_40px_rgba(168,85,247,0.15)] border border-primary/20 transition-transform duration-700 hover:scale-[1.02] bg-[#0f1524] flex items-center justify-center'>
+                  <div className='absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent opacity-50' />
                   <img
-                      src={profilePicture}
-                      alt='Developer at work'
-                      className='w-full h-full object-cover'
+                    src={profilePicture}
+                    alt='Masud Wubetu'
+                    className='w-full h-full object-cover transition-all duration-700'
                   />
                 </div>
-                {/* Technology Logos */}
-                <div className='absolute bottom-6 left-6 z-20'>
-                  <FadeIn delay={500}>
-                    <div className='flex flex-wrap items-center justify-center gap-3 max-w-[90%] bg-black/40 backdrop-blur-sm border border-white/10 rounded-full px-6 py-3'>
-                      <div className='w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300'>
-                        <SiReact className='w-full h-full text-primary'/>
-                      </div>
 
-                      <div className='w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300'>
-                        <SiNextdotjs className='w-full h-full text-primary'/>
-                      </div>
+                {/* Decorative neon dots */}
+                <div className="absolute -top-6 -right-6 w-12 h-12 border-t-2 border-r-2 border-primary/50 rounded-tr-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100"></div>
+                <div className="absolute -bottom-6 -left-6 w-12 h-12 border-b-2 border-l-2 border-primary/50 rounded-bl-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100"></div>
+              </motion.div>
+            </FadeIn>
+          </div>
 
-                      <div className='w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300'>
-                        <SiNodedotjs className='w-full h-full text-primary'/>
-                      </div>
-
-                      <div className='w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300'>
-                        <SiExpress className='w-full h-full text-primary'/>
-                      </div>
-
-                      <div className='w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300'>
-                        <SiTailwindcss className='w-full h-full text-primary'/>
-                      </div>
-
-                      <div className='w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300'>
-                        <SiTypescript className='w-full h-full text-primary'/>
-                      </div>
-
-                      <div className='w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300'>
-                        <SiMongodb className='w-full h-full text-primary'/>
-                      </div>
-
-                      <div className='w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300'>
-                        <SiPostgresql className='w-full h-full text-primary'/>
-                      </div>
-
-                      <div className='w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300'>
-                        <SiHtml5 className='w-full h-full text-primary'/>
-                      </div>
-
-                      <div className='w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300'>
-                        <SiCss className='w-full h-full text-primary'/>
-                      </div>
-
-                      <div className='w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300'>
-                        <SiJavascript className='w-full h-full text-primary'/>
-                      </div>
-
-                      <div className='w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300'>
-                        <SiPython className='w-full h-full text-primary'/>
-                      </div>
-
-                      <div className='w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300'>
-                        <SiCplusplus className='w-full h-full text-primary'/>
-                      </div>
-
-                      <div className='w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300'>
-                        <SiGithub className='w-full h-full text-primary'/>
-                      </div>
-                    </div>
-                  </FadeIn>
-                </div>
-              </div>
-            </div>
-
-          </FadeIn>
         </div>
       </div>
-
-      {/* scroll indicator */}
-      <button
-          onClick={() => scrollToSection('about')}
-          className='absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce'
-      >
-          <ChevronDown className='w-8 h-8 text-primary'/>
-
-      </button>
     </section>
   )
 }

@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
 @import "tailwindcss";
 
 @theme {
   --font-display: "urbanist", "san-serif";
+  --font-mono: "Fira Code", monospace;
   --breakpoint-3xl: 1920px;
-  --color-primary: #8DFF69;
+  --color-primary: #a855f7; /* Tailwind purple-500 */
 }
 
 @layer base {
@@ -15,9 +17,9 @@
 }
 
 body {
-  -webkit-font-smoothig: antialiased;
+  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #000000;
+  background-color: #0B0E14; /* Deep dark navy from screenshot */
   color: #ffffff;
   overflow-x: hidden;
 }
@@ -32,18 +34,18 @@ body {
 }
 
 ::-webkit-scrollbar-thumn {
-  background: linear-gradient(180deg, #8DFF69, #6FE047);
+  background: linear-gradient(180deg, #a855f7, #9333ea);
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumn:hover {
-  background: linear-gradient(180deg, #A8FF8D, #5BC92E);
+  background: linear-gradient(180deg, #c084fc, #7e22ce);
 }
 
 /* Firefox scrollbar */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #6FE047 #0a0a;
+  scrollbar-color: #a855f7 #0a0a;
 }
 
 /* hide scrollbar for carousel */

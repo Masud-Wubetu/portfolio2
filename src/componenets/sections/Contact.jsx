@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-
 import { personalInfo, socialLinks } from '../../utils/constants'
 import FadeIn from '../animations/FadeIn'
 import BubbleText from './BubbleText';
@@ -15,7 +14,7 @@ const Contact = () => {
     if (!formState.name || !formState.email || !formState.message) return;
 
     setStatus('submitting');
-    // Simulate API call
+    // Simulate API callr
     setTimeout(() => {
       setStatus('success');
       setFormState({ name: '', email: '', message: '' });
@@ -24,7 +23,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-32 px-6 relative">
+    <section id="contact" className="py-32 px-6 relative bg-transparent">
       <div className="container mx-auto">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-6xl md:text-8xl font-black text-[var(--theme-text)] mb-20 tracking-tighter font-display text-center lg:text-left leading-[0.9]">
@@ -84,7 +83,7 @@ const Contact = () => {
               {/* Right: Modern Form */}
               <div className="flex-1 w-full bg-[var(--theme-card-bg)] p-0 rounded-3xl relative">
                 {status === 'success' && (
-                  <div className="absolute inset-0 bg-[var(--theme-card-bg)]/90 backdrop-blur-sm z-10 flex flex-col items-center justify-center rounded-3xl p-8 text-center transition-all">
+                  <div className="absolute inset-0 bg-[var(--theme-card-bg)]/90  z-10 flex flex-col items-center justify-center rounded-3xl p-8 text-center transition-all">
                     <div className="w-20 h-20 bg-green-500/20 text-green-500 rounded-full flex items-center justify-center mb-6">
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
