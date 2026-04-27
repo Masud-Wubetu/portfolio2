@@ -10,6 +10,7 @@ const Navbar = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [isAutoScrolling, setIsAutoScrolling] = useState(false);
 
   // Strip '#' from hrefs for scroll spy
   const sectionIds = navLinks.map(link => link.href.replace('#', ''));
@@ -17,6 +18,8 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
+      if (isAutoScrolling) return;
+
       const currentScrollY = window.scrollY;
       
       // Scrolled state for background
@@ -39,13 +42,21 @@ const Navbar = () => {
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY]);
+  }, [lastScrollY, isAutoScrolling]);
 
   const handleNavClick = (href) => {
+    setIsAutoScrolling(true);
+    setIsVisible(true);
+    setIsMenuOpen(false);
+
     const sectionId = href.replace('#', '');
     scrollToSection(sectionId);
-    setIsMenuOpen(false);
-    setIsVisible(true);
+
+    // Reset auto-scrolling flag after animation completes
+    setTimeout(() => {
+      setIsAutoScrolling(false);
+      setLastScrollY(window.scrollY);
+    }, 1000); // Wait for smooth scroll to finish
   }
 
   return (
@@ -65,7 +76,7 @@ const Navbar = () => {
         <div className='flex items-center justify-between'>
           {/* logo */}
           <div className='flex items-center gap-4 group cursor-pointer'
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+            onClick={() => handleNavClick('#home')}>
             <div className='p-2.5 bg-primary/10 rounded-xl group-hover:bg-primary/20 transition-colors duration-300'>
               <Code className='w-7 h-7 text-primary' />
             </div>
