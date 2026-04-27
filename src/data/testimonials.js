@@ -1,12 +1,12 @@
 export const testimonials = [
   {
     id: 1,
-    name: "Alice Johnson",
-    role: "CEO",
-    company: "TechCorp",
+    name: "Abdusalam Oumer",
+    role: "Fullstack Developer",
+    company: "Freelancer",
     year: "2025",
-    image: "/images/alice.png",
-    quote: "Amazing developer! Delivered the project on time with outstanding quality.",
+    image: "/images/abduselam.jpg",
+    quote: "Masud is an exceptional full-stack developer who consistently delivers modern, scalable, and user-friendly applications. Having seen his work firsthand, I can vouch for his mastery of the MERN stack and his commitment to high-quality, maintainable code. He doesn't just meet client needs—he exceeds them with engineering precision.",
     rating: 5,
   },
   {
