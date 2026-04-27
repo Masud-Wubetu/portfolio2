@@ -64,7 +64,7 @@ const About = () => {
                         <FadeIn delay={300}>
                             <div className='space-y-8'>
                                 <h3 className="text-3xl font-black text-white tracking-tight flex items-center gap-4">
-                                    <div className="w-12 h-[2px] bg-primary" />
+                                    <div className="w-16 h-[4px] bg-primary rounded-full shadow-[0_0_10px_rgba(168,85,247,0.4)]" />
                                     The Journey
                                 </h3>
                                 <div className='space-y-6'>
