@@ -22,12 +22,12 @@ const TimelineItem = ({ item, index, setActiveIndex }) => {
             {/* Timeline Line & Dot */}
             <div className="relative flex flex-col items-center w-[52px] shrink-0">
                 {/* Main Line (Left) Highlight */}
-                <div className={`absolute left-[7px] top-0 bottom-0 w-[1px] transition-colors duration-700 ${
+                <div className={`absolute left-[7px] top-0 bottom-0 w-[3px] transition-colors duration-700 ${
                     isInView ? 'bg-primary' : 'bg-transparent'
                 }`} />
 
                 {/* Second Line (Right) Highlight */}
-                <div className={`absolute left-[45px] top-0 bottom-0 w-[1px] transition-colors duration-700 ${
+                <div className={`absolute left-[45px] top-0 bottom-0 w-[3px] transition-colors duration-700 ${
                     isInView ? 'bg-primary' : 'bg-transparent'
                 }`} />
                 
@@ -40,7 +40,7 @@ const TimelineItem = ({ item, index, setActiveIndex }) => {
                             d="M 0 0 C 0 40, 38 40, 38 80"
                             fill="none"
                             stroke="var(--color-primary)"
-                            strokeWidth="1.5"
+                            strokeWidth="3"
                             transition={{ duration: 0.8, ease: "easeInOut" }}
                         />
                     </svg>
@@ -48,19 +48,19 @@ const TimelineItem = ({ item, index, setActiveIndex }) => {
 
                 {/* Dot on first line */}
                 <div className="absolute left-[7px] top-10 -translate-x-1/2 z-20">
-                    <div className={`w-3 h-3 rounded-full border transition-all duration-700 ${
+                    <div className={`w-4 h-4 rounded-full border-2 transition-all duration-700 ${
                         isInView ? 'border-primary bg-primary' : 'border-white/10 bg-transparent'
                     }`} />
                 </div>
 
                 {/* Dot on second line */}
                 <div className="absolute left-[45px] top-[90px] -translate-x-1/2 z-20">
-                    <div className={`w-5 h-5 rounded-full border-2 transition-all duration-700 flex items-center justify-center ${
+                    <div className={`w-7 h-7 rounded-full border-4 transition-all duration-700 flex items-center justify-center ${
                         isInView 
-                            ? 'border-primary bg-black shadow-[0_0_15px_rgba(168,85,247,0.4)]' 
+                            ? 'border-primary bg-black shadow-[0_0_20px_rgba(168,85,247,0.5)]' 
                             : 'border-white/10 bg-black'
                     }`}>
-                        <div className={`w-1.5 h-1.5 rounded-full transition-all duration-700 ${
+                        <div className={`w-2 h-2 rounded-full transition-all duration-700 ${
                             isInView ? 'bg-primary' : 'bg-transparent'
                         }`} />
                     </div>
@@ -159,8 +159,8 @@ const Testimonials = () => {
                     {/* LEFT: Timeline Content */}
                     <div className="lg:w-[45%] relative">
                         {/* Double Vertical Lines */}
-                        <div className="absolute left-[7px] top-0 bottom-0 w-[1px] bg-white/5" />
-                        <div className="absolute left-[45px] top-0 bottom-0 w-[1px] bg-white/5" />
+                        <div className="absolute left-[7px] top-0 bottom-0 w-[3px] bg-white/5" />
+                        <div className="absolute left-[45px] top-0 bottom-0 w-[3px] bg-white/5" />
                         
                         <div className="relative pt-20">
                             {testimonials.map((item, index) => (
