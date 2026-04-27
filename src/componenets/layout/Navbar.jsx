@@ -68,7 +68,7 @@ const Navbar = () => {
       style={{ transform: `translate3d(0, ${isVisible ? '0' : '-100%'}, 0)` }}
     >
       {/* Scroll Progress Bar */}
-      <div className='absolute top-0 left-0 h-[3px] bg-primary shadow-[0_0_15px_rgba(168,85,247,0.6)] transition-all duration-150 ease-out'
+      <div className='absolute top-0 left-0 h-[3px] bg-primary shadow-[0_0_15px_rgba(122,19,255,0.6)] transition-all duration-150 ease-out'
         style={{ width: `${scrollProgress}%` }} />
 
       <div className='max-w-[1440px] mx-auto px-8'>
@@ -77,12 +77,12 @@ const Navbar = () => {
           {/* logo */}
           <div className='flex items-center gap-4 group cursor-pointer'
             onClick={() => handleNavClick('#home')}>
-            <div className='p-2.5 bg-primary/10 rounded-xl group-hover:bg-primary/20 transition-colors duration-300'>
+            <div className='p-2.5 bg-transparent rounded-xl group-hover:bg-primary/10 transition-colors duration-300'>
               <Code className='w-7 h-7 text-primary' />
             </div>
 
             <button
-              className='text-3xl font-bold bg-gradient-to-r from-white via-white to-white/60 bg-clip-text text-transparent hover:from-primary hover:to-primary/60 transition-all duration-300'
+              className='text-3xl font-medium bg-gradient-to-r from-white via-white to-white/60 bg-clip-text text-transparent hover:from-primary hover:to-primary/60 transition-all duration-300'
               aria-label='Home'
             >
               {personalInfo.name.split(' ')[0]}<span className='text-primary'>.</span>
@@ -91,7 +91,7 @@ const Navbar = () => {
 
           {/* desktop navigation */}
           <div className='hidden md:flex items-center gap-10'>
-            <div className='flex items-center gap-2 bg-white/5 p-1.5 rounded-xl border border-white/10 backdrop-blur-md'>
+            <div className='flex items-center gap-2 bg-transparent p-1.5 rounded-xl border border-white/10 backdrop-blur-md'>
               {navLinks.map((link) => {
                 const sectionId = link.href.replace('#', '');
                 const isActive = activeSection === sectionId;
@@ -134,9 +134,9 @@ const Navbar = () => {
             >
               <div className='absolute inset-0 bg-primary opacity-20 group-hover:opacity-30 transition-opacity' />
               <div className='absolute inset-0 border border-primary/50 rounded-xl' />
-              <span className='relative text-base font-bold tracking-wider text-white flex items-center gap-3'>
+              <span className='relative text-base font-medium tracking-wider text-white flex items-center gap-3'>
                 HIRE ME
-                <div className='w-2 h-2 rounded-full bg-primary animate-pulse shadow-[0_0_10px_rgba(168,85,247,0.8)]' />
+                <div className='w-2 h-2 rounded-full bg-primary animate-pulse shadow-[0_0_10px_rgba(122,19,255,0.8)]' />
               </span>
             </button>
           </div>
@@ -168,8 +168,8 @@ const Navbar = () => {
                 key={link.href}
                 onClick={() => handleNavClick(link.href)}
                 className={`text-left px-6 py-4 rounded-2xl text-xl font-semibold transition-all duration-300 ${isActive
-                  ? 'text-primary bg-primary/10 border-l-4 border-primary'
-                  : 'text-white/70 hover:text-white hover:bg-white/5'
+                  ? 'text-primary bg-transparent border-l-4 border-primary'
+                  : 'text-white/70 hover:text-white hover:bg-transparent'
                   }`}
               >
                 {link.name}
@@ -178,7 +178,7 @@ const Navbar = () => {
           })}
           <button
             onClick={() => handleNavClick('#contact')}
-            className='w-full px-8 py-5 bg-primary text-white text-xl font-bold rounded-2xl hover:bg-primary/90 transition-all shadow-xl shadow-primary/20 mt-4'
+            className='w-full px-8 py-5 bg-primary text-white text-xl font-medium rounded-2xl hover:bg-primary/90 transition-all shadow-xl shadow-primary/20 mt-4'
           >
             Hire me
           </button>

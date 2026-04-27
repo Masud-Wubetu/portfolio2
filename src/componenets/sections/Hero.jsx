@@ -11,7 +11,7 @@ const Hero = () => {
   return (
     <section id="home" className='relative min-h-screen flex items-center overflow-hidden bg-transparent pt-20'>
       {/* Background elements */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-transparent rounded-full blur-[120px] pointer-events-none" />
 
       {/* content container */}
       <div className='relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-20 w-full'>
@@ -21,7 +21,7 @@ const Hero = () => {
           <div className='text-left lg:col-span-7'>
             <FadeIn delay={0}>
               <div className="mb-6 flex items-center">
-                <span className="text-3xl md:text-4xl font-medium tracking-wide text-primary drop-shadow-[0_0_15px_rgba(168,85,247,0.4)]">
+                <span className="text-3xl md:text-4xl font-medium tracking-wide text-primary drop-shadow-[0_0_15px_rgba(122,19,255,0.4)]">
                   Hello
                 </span>
                 <span className="text-3xl md:text-4xl ml-3 animate-pulse inline-block origin-[70%_70%]">👋</span>
@@ -29,10 +29,10 @@ const Hero = () => {
             </FadeIn>
 
             <FadeIn delay={100}>
-              <h1 className='text-5xl md:text-7xl font-bold text-white mb-8 tracking-tight'>
+              <h1 className='text-5xl md:text-7xl font-medium tracking-tighter text-white mb-8 tracking-tight'>
                 I am <span className="relative inline-block">
                   Masud
-                  <span className="absolute -bottom-2 left-0 w-full h-1.5 bg-primary/80 rounded-full shadow-[0_0_15px_rgba(168,85,247,0.6)]"></span>
+                  <span className="absolute -bottom-2 left-0 w-full h-1.5 bg-primary/80 rounded-full shadow-[0_0_15px_rgba(122,19,255,0.6)]"></span>
                 </span> Wubetu
               </h1>
             </FadeIn>
@@ -61,7 +61,7 @@ const Hero = () => {
               <div className='flex flex-wrap items-center gap-6'>
                 <button
                   onClick={() => scrollToSection('contact')}
-                  className='px-8 py-3 rounded-lg border border-primary text-white bg-primary/10 hover:bg-primary/20 hover:shadow-[0_0_20px_rgba(168,85,247,0.3)] transition-all duration-300 font-mono text-sm tracking-wide uppercase'
+                  className='px-8 py-3 rounded-lg border border-primary text-white bg-transparent hover:bg-primary/10 hover:shadow-[0_0_20px_rgba(122,19,255,0.3)] transition-all duration-300 font-mono text-sm tracking-wide uppercase'
                 >
                   Let's Talk
                 </button>
@@ -92,7 +92,7 @@ const Hero = () => {
                 className='relative group'
               >
                 {/* Floating clean image */}
-                <div className='relative overflow-hidden rounded-2xl w-[320px] h-[400px] md:w-[400px] md:h-[500px] shadow-[0_0_40px_rgba(168,85,247,0.15)] border border-primary/20 transition-transform duration-700 hover:scale-[1.02] bg-[#0f1524] flex items-center justify-center'>
+                <div className='relative overflow-hidden rounded-2xl w-[320px] h-[400px] md:w-[400px] md:h-[500px] shadow-[0_0_40px_rgba(122,19,255,0.15)] border border-primary/20 transition-transform duration-700 hover:scale-[1.02] bg-[#0f1524] flex items-center justify-center'>
                   <div className='absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent opacity-50' />
                   <img
                     src={profilePicture}

@@ -196,7 +196,7 @@ const ProjectCard = ({ project, index = 0 }) => {
 
                 {/* 3. Title */}
                 <div className="absolute top-8 left-8 right-24 z-20" style={{ transform: 'translateZ(40px)' }}>
-                    <h3 className="text-3xl md:text-4xl font-bold text-white tracking-tight drop-shadow-[0_2px_8px_rgba(0,0,0,0.3)]">
+                    <h3 className="text-3xl md:text-4xl font-medium text-white tracking-tight drop-shadow-[0_2px_8px_rgba(0,0,0,0.3)]">
                         {title}
                     </h3>
                 </div>

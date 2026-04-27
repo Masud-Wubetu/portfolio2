@@ -11,8 +11,8 @@ const About = () => {
 
             {/* Background Glows */}
             <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
-                <div className="absolute top-1/3 -left-20 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[150px]" />
-                <div className="absolute bottom-1/4 -right-20 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[150px]" />
+                <div className="absolute top-1/3 -left-20 w-[500px] h-[500px] bg-transparent rounded-full blur-[150px]" />
+                <div className="absolute bottom-1/4 -right-20 w-[500px] h-[500px] bg-transparent rounded-full blur-[150px]" />
             </div>
 
             <div className='max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10'>
@@ -20,10 +20,13 @@ const About = () => {
                 {/* Header Section */}
                 <div className="mb-32">
                     <FadeIn delay={0}>
-                        <h2 className='text-4xl md:text-9xl font-black text-white tracking-tighter leading-none mb-12'>
+                        <div className="flex items-center gap-4 mb-6">
+                            <h3 className="text-sm font-medium text-white uppercase">About</h3>
+                        </div>
+                        <h2 className='text-4xl md:text-7xl font-medium tracking-tighter text-white tracking-tighter leading-none mb-12'>
                             <span className="text-primary">Philosophy & Passion.</span>
                         </h2>
-                        <p className='text-2xl md:text-4xl text-white font-medium leading-[1.1] max-w-4xl'>
+                        <p className='text-2xl md:text-3xl text-white font-medium leading-[1.1] max-w-4xl'>
                             I don't just build websites. I craft high-performance digital architectures that balance aesthetic elegance with engineering precision.
                         </p>
                     </FadeIn>
@@ -49,8 +52,8 @@ const About = () => {
 
                                     {/* Name Overlay */}
                                     <div className="absolute bottom-10 left-10">
-                                        <p className="text-primary font-black text-xs uppercase tracking-widest mb-1">Based in</p>
-                                        <h4 className="text-white text-3xl font-black tracking-tighter">{personalInfo.location}</h4>
+                                        <p className="text-primary font-medium tracking-tighter text-xs uppercase tracking-widest mb-1">Based in</p>
+                                        <h4 className="text-white text-3xl font-medium tracking-tighter">{personalInfo.location}</h4>
                                     </div>
                                 </div>
                             </div>
@@ -63,8 +66,8 @@ const About = () => {
                         {/* Bio Section */}
                         <FadeIn delay={300}>
                             <div className='space-y-8'>
-                                <h3 className="text-3xl font-black text-white tracking-tight flex items-center gap-4">
-                                    <div className="w-16 h-[4px] bg-primary rounded-full shadow-[0_0_10px_rgba(168,85,247,0.4)]" />
+                                <h3 className="text-3xl font-medium tracking-tighter text-white tracking-tight flex items-center gap-4">
+                                    <div className="w-16 h-[4px] bg-primary rounded-full shadow-[0_0_10px_rgba(122,19,255,0.4)]" />
                                     The Journey
                                 </h3>
                                 <div className='space-y-6'>

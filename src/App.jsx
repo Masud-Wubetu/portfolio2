@@ -11,9 +11,15 @@ import ParticleBackground from './componenets/backgrounds/ParticleBackground'
 
 const App = () => {
   return (
-    <div className='min-h-screen bg-black pb-[100vh] relative'>
-      <div className="z-0">
+    <div className='min-h-screen relative'>
+      {/* Background Layers */}
+      <div className="fixed inset-0 z-0 pointer-events-none">
         <ParticleBackground />
+        
+        {/* Subtle Fixed Glows for Depth */}
+        <div className="absolute top-[-10%] left-[-5%] w-[40%] h-[40%] bg-primary/5 rounded-full blur-[120px]" />
+        <div className="absolute bottom-[20%] right-[-5%] w-[35%] h-[35%] bg-blue-500/5 rounded-full blur-[100px]" />
+        <div className="absolute top-[30%] right-[10%] w-[25%] h-[25%] bg-primary/3 rounded-full blur-[80px]" />
       </div>
       <Navbar />
 

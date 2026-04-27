@@ -40,16 +40,16 @@ const Projects = () => {
     return (
         <section id="projects" ref={sectionRef} className="relative py-20 bg-transparent overflow-hidden">
             <div className="absolute inset-0 overflow-hidden">
-                <div className="absolute top-1/3 right-0 w-96 h-96 bg-primary/20 opacity-20 rounded-full blur-3x" />
-                <div className="absolute bottom-1/3 left-0 w-96 h-96 bg-primary/20 opacity-20 rounded-full blur-3x" />
-                <div className="absolute top-1/2 right-1/3 w-96 h-96 bg-primary/10 opacity-20 rounded-full blur-3x" />
+                <div className="absolute top-1/3 right-0 w-96 h-96 bg-primary/10 opacity-20 rounded-full blur-3x" />
+                <div className="absolute bottom-1/3 left-0 w-96 h-96 bg-primary/10 opacity-20 rounded-full blur-3x" />
+                <div className="absolute top-1/2 right-1/3 w-96 h-96 bg-transparent opacity-20 rounded-full blur-3x" />
             </div>
 
             <div className="relative z-10 max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12">
                 <FadeIn delay={0}>
                     <div className="text-left mb-16">
-                        <h3 className="text-sm font-bold text-white uppercase tracking-[0.3em] mb-4">WORKS</h3>
-                        <h2 className="text-6xl md:text-8xl font-bold text-primary mb-6 tracking-tight">
+                        <h3 className="text-sm font-medium text-white uppercase tracking-[0.3em] mb-4">WORKS</h3>
+                        <h2 className="text-5xl md:text-7xl font-medium tracking-tighter text-primary mb-6 tracking-tight">
                             My Works
                         </h2>
                         <p className="text-2xl text-white max-w-2xl font-medium">

@@ -26,7 +26,7 @@ const Contact = () => {
     <section id="contact" className="py-32 px-6 relative bg-transparent">
       <div className="container mx-auto">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-6xl md:text-8xl font-black text-[var(--theme-text)] mb-20 tracking-tighter font-display text-center lg:text-left leading-[0.9]">
+          <h2 className="text-6xl md:text-8xl font-medium tracking-tighter text-[var(--theme-text)] mb-20 tracking-tighter font-display text-center lg:text-left leading-[0.9]">
             <BubbleText text="Let's Start a Conversation" className="text-purple-500" />
           </h2>
 
@@ -49,7 +49,7 @@ const Contact = () => {
                       </svg>
                     </div>
                     <div>
-                      <div className="text-[10px] font-black text-[var(--theme-text-muted)] uppercase tracking-[0.4em] mb-1">Direct Communication</div>
+                      <div className="text-[10px] font-medium tracking-tighter text-[var(--theme-text-muted)] uppercase tracking-[0.4em] mb-1">Direct Communication</div>
                       <div className="text-[var(--theme-text)] text-xl font-medium font-sans">wubetumasud@gmail.com</div>
                     </div>
                   </div>
@@ -62,7 +62,7 @@ const Contact = () => {
                       </svg>
                     </div>
                     <div>
-                      <div className="text-[10px] font-black text-[var(--theme-text-muted)] uppercase tracking-[0.4em] mb-1">HQ Location</div>
+                      <div className="text-[10px] font-medium tracking-tighter text-[var(--theme-text-muted)] uppercase tracking-[0.4em] mb-1">HQ Location</div>
                       <div className="text-[var(--theme-text)] text-xl font-medium font-sans">Addis Ababa, Ethiopia</div>
                     </div>
                   </div>
@@ -73,7 +73,7 @@ const Contact = () => {
                     { name: 'LinkedIn', url: 'https://www.linkedin.com/in/masud-wubetu-15ab93363/' },
                     { name: 'Github', url: 'https://github.com/Masud-Wubetu' },
                   ].map(platform => (
-                    <a key={platform.name} href={platform.url} target="_blank" rel="noopener noreferrer" className="px-8 py-3 glass-card hover:bg-[var(--theme-card-bg)] text-[var(--theme-text-muted)] text-[10px] font-black uppercase tracking-[0.3em] transition-all hover:text-[var(--theme-text)] border-[var(--theme-card-border)] cursor-pointer inline-block">
+                    <a key={platform.name} href={platform.url} target="_blank" rel="noopener noreferrer" className="px-8 py-3 glass-card hover:bg-[var(--theme-card-bg)] text-[var(--theme-text-muted)] text-[10px] font-medium tracking-tighter uppercase tracking-[0.3em] transition-all hover:text-[var(--theme-text)] border-[var(--theme-card-border)] cursor-pointer inline-block">
                       {platform.name}
                     </a>
                   ))}
@@ -89,14 +89,14 @@ const Contact = () => {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <h3 className="text-2xl font-bold text-[var(--theme-text)] mb-2">Transmission Received</h3>
+                    <h3 className="text-2xl font-medium text-[var(--theme-text)] mb-2">Transmission Received</h3>
                     <p className="text-[var(--theme-text-muted)]">I'll get back to you as soon as possible.</p>
                   </div>
                 )}
                 <form className="space-y-10" onSubmit={handleSubmit}>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                     <div className="space-y-4">
-                      <label className="text-[10px] font-black text-[var(--theme-text-muted)] uppercase tracking-[0.3em] ml-2">Identity</label>
+                      <label className="text-[10px] font-medium tracking-tighter text-[var(--theme-text-muted)] uppercase tracking-[0.3em] ml-2">Identity</label>
                       <input
                         type="text"
                         required
@@ -107,7 +107,7 @@ const Contact = () => {
                       />
                     </div>
                     <div className="space-y-4">
-                      <label className="text-[10px] font-black text-[var(--theme-text-muted)] uppercase tracking-[0.3em] ml-2">Email Hook</label>
+                      <label className="text-[10px] font-medium tracking-tighter text-[var(--theme-text-muted)] uppercase tracking-[0.3em] ml-2">Email Hook</label>
                       <input
                         type="email"
                         required
@@ -119,7 +119,7 @@ const Contact = () => {
                     </div>
                   </div>
                   <div className="space-y-4">
-                    <label className="text-[10px] font-black text-[var(--theme-text-muted)] uppercase tracking-[0.3em] ml-2">Project Vision</label>
+                    <label className="text-[10px] font-medium tracking-tighter text-[var(--theme-text-muted)] uppercase tracking-[0.3em] ml-2">Project Vision</label>
                     <textarea
                       rows="5"
                       required
@@ -132,7 +132,7 @@ const Contact = () => {
                   <button
                     type="submit"
                     disabled={status === 'submitting'}
-                    className={`w-full py-6 bg-[var(--theme-text)] text-[var(--theme-bg)] font-black text-xs tracking-[0.4em] uppercase rounded-2xl transition-all shadow-2xl shadow-black/5 flex items-center justify-center ${status === 'submitting' ? 'opacity-70 cursor-not-allowed' : 'hover:scale-[1.02] active:scale-95 cursor-pointer'}`}
+                    className={`w-full py-6 bg-[var(--theme-text)] text-[var(--theme-bg)] font-medium tracking-tighter text-xs tracking-[0.4em] uppercase rounded-2xl transition-all shadow-2xl shadow-black/5 flex items-center justify-center ${status === 'submitting' ? 'opacity-70 cursor-not-allowed' : 'hover:scale-[1.02] active:scale-95 cursor-pointer'}`}
                   >
                     {status === 'submitting' ? (
                       <span className="flex items-center gap-3">

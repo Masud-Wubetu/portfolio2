@@ -1,12 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Plus+Jakarta+Sans:wght@200..800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-display: "urbanist", "san-serif";
+  --font-display: "Outfit", "Plus Jakarta Sans", "Inter", sans-serif;
   --font-mono: "Fira Code", monospace;
   --breakpoint-3xl: 1920px;
-  --color-primary: #a855f7;
+  --color-primary: #7A13FF;
   /* Tailwind purple-500 */
 }
 
@@ -20,8 +20,8 @@
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #0B0E14;
-  /* Deep dark navy from screenshot */
+  background-color: #070C17;
+  /* Deepest dark navy, almost black */
   color: #ffffff;
   overflow-x: hidden;
 }
@@ -32,7 +32,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #0a0a0a;
+  background: #224aa17d;
 }
 
 ::-webkit-scrollbar-thumb {

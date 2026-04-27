@@ -79,7 +79,7 @@ const SkillIcon = ({ skill }) => {
                         className="absolute -bottom-8 z-50 whitespace-nowrap pointer-events-none"
                     >
                         <div
-                            className="text-black text-[9px] font-black uppercase tracking-[0.2em] px-3 py-1 rounded-full shadow-2xl"
+                            className="text-black text-[9px] font-medium tracking-tighter uppercase tracking-[0.2em] px-3 py-1 rounded-full shadow-2xl"
                             style={{ backgroundColor: color === '#ffffff' ? '#ffffff' : color }}
                         >
                             {skill.name}
@@ -128,7 +128,10 @@ const Skills = () => {
                 {/* Header: Full Width */}
                 <div className="mb-32 text-left">
                     <FadeIn delay={0}>
-                        <h2 className="text-7xl md:text-9xl font-black text-white tracking-tighter leading-none mb-10">
+                        <div className="flex items-center gap-4 mb-6">
+                            <h3 className="text-sm font-medium text-white uppercase">Skills</h3>
+                        </div>
+                        <h2 className="text-5xl md:text-7xl font-medium tracking-tighter text-white tracking-tighter leading-none mb-10">
                             <span className="text-primary">My Skills.</span>
                         </h2>
                         <div className="flex items-start">
@@ -145,7 +148,7 @@ const Skills = () => {
                         <FadeIn key={cat.title} delay={idx * 150}>
                             <div className="space-y-4">
                                 <div className="flex items-center">
-                                    <h4 className="text-2xl font-black text-white uppercase">
+                                    <h4 className="text-2xl font-medium tracking-tighter text-white uppercase">
                                         {cat.title}
                                     </h4>
                                 </div>
@@ -162,7 +165,7 @@ const Skills = () => {
             </div>
 
             {/* Subtle glow orb */}
-            <div className="absolute top-1/2 left-0 -translate-y-1/2 w-96 h-96 bg-primary/5 rounded-full blur-[120px] -z-10" />
+            <div className="absolute top-1/2 left-0 -translate-y-1/2 w-96 h-96 bg-transparent rounded-full blur-[120px] -z-10" />
         </section>
     )
 }
