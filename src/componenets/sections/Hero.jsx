@@ -38,8 +38,16 @@ const Hero = () => {
             </FadeIn>
 
             <FadeIn delay={200}>
-              <div className="mb-12 h-10">
-                <TypewriterText text="I build systems that don't break at scale." delay={70} />
+              <div className="mb-12 h-16 md:h-10">
+                <TypewriterText 
+                  texts={[
+                    "I build systems that don't break at scale.",
+                    "I architect high-performance digital solutions.",
+                    "I transform complex logic into elegant code.",
+                    "I engineer seamless full-stack experiences.",
+                    "I craft robust architectures for the modern web."
+                  ]} 
+                />
               </div>
             </FadeIn>
 
