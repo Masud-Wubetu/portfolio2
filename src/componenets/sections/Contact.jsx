@@ -32,7 +32,7 @@ const Contact = () => {
 
           <div className="glass-card p-12 md:p-20 relative overflow-hidden">
             {/* Visual accent */}
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 via-cyan-400 to-transparent" />
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-primary/50 to-transparent" />
 
             <div className="flex flex-col lg:flex-row gap-20">
               {/* Left: Engagement Info */}
